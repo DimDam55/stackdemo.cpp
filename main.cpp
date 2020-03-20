@@ -27,4 +27,4 @@ class stack{
     };
     node *head;
     
-}
+};
