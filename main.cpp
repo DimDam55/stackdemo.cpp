@@ -52,7 +52,7 @@ class stack{
     T *data;
     int top; 
 };
-
+#ifndef CONTEST
 /*int main(){
   stack<int>s(10);
   cout<<"s is empty"<<s<<endl;
@@ -82,3 +82,4 @@ class stack{
   k.push('&');
   cout<<"k contains a character: "<<k<<endl;
 }*/
+#endif
