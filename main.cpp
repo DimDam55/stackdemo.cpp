@@ -6,47 +6,34 @@ template <typename T>
 class stack{
   public:
     stack(int size){
-      head = NULL;
+      data = new T[size];
+      top = 0;
     }
-    stack (const stack &s){
-      head = s.head;
-      node p = head;
-            for(int i = 0; i<len-1; i++){
+    stack (const stack &s){}
 
-      }
-    }
     ~stack(){}
-    const stack & operator = (const stack &s){}
+
+    const stack & operator = (const stack &s){
+      
+    }
 
     bool empty(){
-      return head == NULL;
+      return top == 0;
     }
     void push(const T &x){
-      node *p = new node;
-      p->info = x;
-      p->next = head;
-      head = p;
-      len++;
+      data[top++] = x;
     }
     T pop(){
-      node *q = head;
-      head = q->next;
-      delete q;
-      len--;
+      data[--top];
     }
     int size(){
-      return len;
+      return top;
     }
 
     friend ostream & operator<<(ostream &out,const stack &s){
       out<<
     }
   private:
-    struct node{
-      int info;
-      node *next;
-    };
-    node *head;
-    int len = 0;
-    
+    T data[];
+    int top; 
 };
